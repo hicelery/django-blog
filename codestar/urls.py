@@ -19,5 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # include django_summernote URLs without a namespace so its named routes resolve correctly
+    path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name='blog-urls'),
 ]
