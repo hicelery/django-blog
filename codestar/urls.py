@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path("about/", include("about.urls"), name="about-urls"),
     path('admin/', admin.site.urls),
     # include django_summernote URLs without a namespace so its named routes resolve correctly
     path('summernote/', include('django_summernote.urls')),
