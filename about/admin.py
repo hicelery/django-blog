@@ -1,5 +1,5 @@
 from django.contrib import admin
-from about.models import AboutPage
+from about.models import AboutPage, CollaborateRequest
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -11,3 +11,9 @@ class AboutPageAdmin(SummernoteModelAdmin):
     list_display = ('title', 'author', 'updated_on')
     search_fields = ['title', 'content']
     summernote_fields = ('content',)
+
+
+@admin.register(CollaborateRequest)
+class CollaborateRequestAdmin(admin.ModelAdmin):
+
+    list_display = ('message', 'read',)
