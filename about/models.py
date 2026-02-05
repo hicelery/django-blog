@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -8,6 +9,7 @@ class AboutPage(models.Model):
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
     author = models.CharField(max_length=100)
+    profile_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return f"{self.title} by {self.author}"
